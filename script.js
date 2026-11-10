@@ -2,22 +2,32 @@ function solve(){
   let height = document.getElementById('triangle height').value
   let base = document.getElementById('triangle base').value
   let areaOfTriangle = 0.5*height*base
-  document.getElementById('display').innerHTML = `<p>Area of triangle = ${areaOfTriangle}cm²</p>`
+  displayTriangle.innerHTML = `<p>Area of triangle = ${areaOfTriangle}cm²</p>`
   document.getElementById('triangle height').value = ''
   document.getElementById('triangle base').value = ''
 }
 
-function show(){
+function square(){
   let length = document.getElementById('side').value
   let areaOfSquare = length**2
-  document.getElementById('display square').innerHTML = `<p>Area of square = ${areaOfSquare}cm²</p>`
-  document.getElementById('side') = ''
+  displaySquare.innerHTML = `<p>Area of square = ${areaOfSquare}cm²</p>`
+  document.getElementById('side').value = ''
   
 }
 
 function circle(){
   let radius = document.getElementById("circle radius").value
   let areaOfCircle = 3.14159*radius**2
-  displayCircle = document.getElementById('display circle')
-  displayCircle.innerHTML = 'Area of circle = '
+  displayCircle.innerHTML = `<p>Area of circle = ${areaOfCircle}  cm²</p>`
+  document.getElementById('cricle radius') = ''
+}
+
+
+function quadilateral(){
+  let d = document.getElementById('diagonal').value
+  let h1 = document.getElementById('h1').value
+  let h2 = document.getElementById('h2').value
+  let areaOfQuadilateral = 0.5*d*(h1+h2)
+  displayQuadilateral.innerHTML = `<p>Area of quadilateral = ${areaOfQuadilateral} m²</p>`
+
 }

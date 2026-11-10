@@ -18,20 +18,27 @@
       h. the body mass index (BMI)
     -->
     <h2>Area of a triangle</h2>
-    <input type="text" placeholder="Enter the height" id="triangle height">
-    <input type="text" placeholder="Enter the base" id="triangle base">
+    <input type="number" placeholder="Enter the height" id="triangle height">
+    <input type="number" placeholder="Enter the base" id="triangle base">
     <button onclick="solve()">Solve</button>
-    <div id="display"></div>
+    <div id="displayTriangle"></div>
 
     <h2>Area of a square</h2>
-    <input type="text" placeholder="Enter s value" id="side">
-    <button onclick="show()">Solve</button>
-    <div id="display square"></div>
+    <input type="number" placeholder="Enter s value" id="side">
+    <button onclick="square()">Solve</button>
+    <div id="displaySquare"></div>
 
     <h2>Area of a circle</h2>
-    <input type="text" placeholder="Enter the radius" id="circle radius">
+    <input type="number" placeholder="Enter the radius" id="circle radius">
     <button onclick="circle()">Solve</button>
-    <div id="display circle"></div>
+    <div id="displayCircle"></div>
+
+    <h2>Area of a Quadilateral</h2>
+    <input type="number" placeholder="Enter the diagonal value" id="diagonal">
+    <input type="number" placeholder="Enter h1 value" id="h1">
+    <input type="number" placeholder="Enter h2 value" id="h2">
+    <button onclick="quadilateral()">Solve</button>
+    <div id="displayQuadilateral"></div>
 
     <script src="script.js"></script>
   </body>

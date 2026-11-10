@@ -19,7 +19,7 @@ function circle(){
   let radius = document.getElementById("circle radius").value
   let areaOfCircle = 3.14159*radius**2
   displayCircle.innerHTML = `<p>Area of circle = ${areaOfCircle}  cm²</p>`
-  document.getElementById('cricle radius') = ''
+  document.getElementById('cricle radius').value = ''
 }
 
 
@@ -29,5 +29,16 @@ function quadilateral(){
   let h2 = document.getElementById('h2').value
   let areaOfQuadilateral = 0.5*d*(h1+h2)
   displayQuadilateral.innerHTML = `<p>Area of quadilateral = ${areaOfQuadilateral} m²</p>`
+  document.getElementById('diagonal').value = ''
+  document.getElementById('h1').value = ''
+  document.getElementById('h2').value = ''
+}
 
+function rhombus(){
+  let rBase = document.getElementById('rhombusBase').value
+  let rHeight = document.getElementById('rhombusHeight').value
+  let areaOfRhombus = rBase*rHeight
+  displayRhombus.innerHTML = `<p>Area of rhombus = ${areaOfRhombus} cm²</p>`
+  document.getElementById('rhombusBase').value
+  document.getElementById('rhombusHeight').value
 }

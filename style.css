@@ -1,0 +1,387 @@
+:root {
+        color-scheme: light;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #17241f;
+        background: #f5f7f4;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        --ink: #17241f;
+        --muted: #718078;
+        --line: #e6ebe7;
+        --green: #256c50;
+        --green-dark: #1c563f;
+        --mint: #e7f2eb;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-width: 320px;
+        margin: 0;
+        background:
+          radial-gradient(ellipse at 86% 3%, rgba(218, 234, 221, 0.62), transparent 30rem),
+          #f5f7f4;
+      }
+
+      .page-shell {
+        width: min(1120px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 76px;
+        border-bottom: 1px solid rgba(23, 36, 31, 0.08);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+        color: var(--ink);
+        font-size: 15px;
+        font-weight: 750;
+        letter-spacing: -0.035em;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border-radius: 11px;
+        background: var(--green);
+        color: white;
+        font-size: 19px;
+        line-height: 1;
+      }
+
+      .topbar-note {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 550;
+      }
+
+      main {
+        padding: 66px 0 56px;
+      }
+
+      .intro {
+        max-width: 650px;
+        margin: 0 auto 38px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 15px;
+        color: var(--green);
+        font-size: 11px;
+        font-weight: 750;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #73ad88;
+        content: "";
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(36px, 5vw, 54px);
+        font-weight: 720;
+        letter-spacing: -0.065em;
+        line-height: 1.07;
+      }
+
+      .intro-copy {
+        max-width: 470px;
+        margin: 17px auto 0;
+        color: #66746d;
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        margin: 0 0 16px;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      .section-heading p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .calculator-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .calculator-card {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        padding: 21px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 4px 16px rgba(34, 57, 44, 0.025);
+        transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+      }
+
+      .calculator-card:hover {
+        transform: translateY(-2px);
+        border-color: #cfddd3;
+        box-shadow: 0 10px 24px rgba(34, 57, 44, 0.07);
+      }
+
+      .card-heading {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        margin-bottom: 8px;
+      }
+
+      .shape-icon {
+        display: grid;
+        width: 36px;
+        height: 36px;
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: 11px;
+        background: var(--mint);
+        color: var(--green);
+        font-size: 17px;
+        font-weight: 700;
+      }
+
+      .calculator-card h3 {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+      }
+
+      .formula {
+        min-height: 18px;
+        margin: 0 0 17px 47px;
+        color: #87938c;
+        font-size: 11px;
+      }
+
+      .fields {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+        margin-bottom: 13px;
+      }
+
+      .fields.one-column {
+        grid-template-columns: 1fr;
+      }
+
+      .field {
+        display: block;
+        min-width: 0;
+        color: #637169;
+        font-size: 11px;
+        font-weight: 650;
+      }
+
+      .field input {
+        display: block;
+        width: 100%;
+        height: 42px;
+        margin-top: 6px;
+        padding: 0 11px;
+        border: 1px solid #e3e9e5;
+        border-radius: 9px;
+        outline: none;
+        background: #fbfcfb;
+        color: var(--ink);
+        font: inherit;
+        font-size: 13px;
+        font-weight: 500;
+        transition: border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
+      }
+
+      .field input::placeholder {
+        color: #a4aea8;
+        font-weight: 450;
+      }
+
+      .field input:focus {
+        border-color: #76a98a;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(70, 137, 98, 0.12);
+      }
+
+      .solve-button {
+        display: flex;
+        width: 100%;
+        min-height: 40px;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        margin-top: auto;
+        border: 0;
+        border-radius: 9px;
+        background: #edf4ef;
+        color: var(--green-dark);
+        cursor: pointer;
+        font: inherit;
+        font-size: 12px;
+        font-weight: 750;
+        transition: background 150ms ease, color 150ms ease, transform 150ms ease;
+      }
+
+      .solve-button:hover {
+        background: var(--green);
+        color: white;
+      }
+
+      .solve-button:active {
+        transform: scale(0.985);
+      }
+
+      .solve-button:focus-visible {
+        outline: 3px solid rgba(70, 137, 98, 0.28);
+        outline-offset: 2px;
+      }
+
+      .result {
+        min-height: 0;
+        color: var(--green-dark);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .result:not(:empty) {
+        margin-top: 12px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        background: #f0f7f2;
+      }
+
+      .result p {
+        margin: 0;
+      }
+
+      .bmi-card {
+        background: linear-gradient(115deg, #fff 20%, #f5faf6);
+      }
+
+      .bmi-fields {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: end;
+        gap: 11px;
+        margin-bottom: 13px;
+      }
+
+      .bmi-fields .solve-button {
+        width: 100%;
+        grid-column: 1 / -1;
+        margin-top: 0;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0 28px;
+        color: #89958e;
+        font-size: 11px;
+      }
+
+      @media (max-width: 800px) {
+        main {
+          padding-top: 52px;
+        }
+
+        .calculator-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+      }
+
+      @media (max-width: 560px) {
+        .page-shell {
+          width: min(100% - 32px, 420px);
+        }
+
+        .topbar {
+          min-height: 64px;
+        }
+
+        .topbar-note {
+          font-size: 11px;
+        }
+
+        main {
+          padding: 43px 0 40px;
+        }
+
+        .intro {
+          margin-bottom: 32px;
+        }
+
+        .intro-copy {
+          font-size: 14px;
+        }
+
+        .section-heading p {
+          max-width: 130px;
+          text-align: right;
+        }
+
+        .calculator-grid {
+          grid-template-columns: 1fr;
+          gap: 11px;
+        }
+
+        .calculator-card,
+        .bmi-card {
+          grid-column: auto;
+          padding: 18px;
+        }
+
+        .bmi-fields {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .bmi-fields .solve-button {
+          width: 100%;
+          grid-column: span 2;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }

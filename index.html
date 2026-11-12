@@ -3,148 +3,264 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="theme-color" content="#f5f7f4" />
+    <meta
+      name="description"
+      content="A simple collection of calculators for common shapes and body mass index."
+    />
+    <title>Shape &amp; Space — Area Calculator</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- 
-      Write an algorithm to calculate
-      a. area of a triangle
-      b. area of a square
-      c. area of a circle
-      d. area of a Quadrilateral
-      e. area of a Rhombus
-      f. area of a Trapezium
-      g. area of a Parallelogram
-      h. the body mass index (BMI)
-    -->
-    <h2>Area of a triangle</h2>
-    <input type="number" placeholder="Enter the height" id="triangle height">
-    <input type="number" placeholder="Enter the base" id="triangle base">
-    <button onclick="solve()">Solve</button>
-    <div id="displayTriangle"></div>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Shape and Space home">
+          <span class="brand-mark" aria-hidden="true">∠</span>
+          <span>Shape &amp; Space</span>
+        </a>
+        <span class="topbar-note">A little clarity for every calculation</span>
+      </header>
 
-    <h2>Area of a square</h2>
-    <input type="number" placeholder="Enter s value" id="side">
-    <button onclick="square()">Solve</button>
-    <div id="displaySquare"></div>
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <p class="eyebrow">Your everyday math toolkit</p>
+          <h1 id="page-title">Measure the space<br />around you.</h1>
+          <p class="intro-copy">
+            Find the area of familiar shapes or work out your BMI. Choose a
+            calculator, enter your measurements, and get your answer.
+          </p>
+        </section>
 
-    <h2>Area of a circle</h2>
-    <input type="number" placeholder="Enter the radius" id="circle radius">
-    <button onclick="circle()">Solve</button>
-    <div id="displayCircle"></div>
+        <section aria-labelledby="calculator-title">
+          <div class="section-heading">
+            <h2 id="calculator-title">Area calculators</h2>
+            <p>Enter measurements in the same unit</p>
+          </div>
 
-    <h2>Area of a Quadilateral</h2>
-    <input type="number" placeholder="Enter the diagonal value" id="diagonal">
-    <input type="number" placeholder="Enter h1 value" id="h1">
-    <input type="number" placeholder="Enter h2 value" id="h2">
-    <button onclick="quadilateral()">Solve</button>
-    <div id="displayQuadilateral"></div>
+          <div class="calculator-grid">
+            <article class="calculator-card">
+              <div class="card-heading">
+                <span class="shape-icon" aria-hidden="true">△</span>
+                <h3>Triangle</h3>
+              </div>
+              <p class="formula">Area = 0.5 * base * height</p>
+              <div class="fields">
+                <label class="field" for="triangle base">
+                  Base
+                  <input
+                    type="number"
+                    placeholder="e.g. 8"
+                    id="triangle base"
+                  />
+                </label>
+                <label class="field" for="triangle height">
+                  Height
+                  <input
+                    type="number"
+                    placeholder="e.g. 5"
+                    id="triangle height"
+                  />
+                </label>
+              </div>
+              <button class="solve-button" type="button" onclick="solve()">
+                Calculate area <span aria-hidden="true">→</span>
+              </button>
+              <div class="result" id="displayTriangle" aria-live="polite"></div>
+            </article>
 
-    <h2>Area of Rhombus</h2>
-    <input type="number" placeholder="Enter base" id="rhombusBase">
-    <input type="number" placeholder="Enter height" id="rhombusHeight">
-    <button onclick="rhombus()">Solve</button>
-    <div id="displayRhombus"></div>
+            <article class="calculator-card">
+              <div class="card-heading">
+                <span class="shape-icon" aria-hidden="true">□</span>
+                <h3>Square</h3>
+              </div>
+              <p class="formula">Area = side × side</p>
+              <div class="fields one-column">
+                <label class="field" for="side">
+                  Side length
+                  <input type="number" placeholder="e.g. 6" id="side" />
+                </label>
+              </div>
+              <button class="solve-button" type="button" onclick="square()">
+                Calculate area <span aria-hidden="true">→</span>
+              </button>
+              <div class="result" id="displaySquare" aria-live="polite"></div>
+            </article>
 
-    <h2>Area of Trapezium</h2>
-    <input type="number" placeholder="Enter first length">
-    <input type="number" placeholder="Enter second length">
-    <input type="number" placeholder="Enter height">
+            <article class="calculator-card">
+              <div class="card-heading">
+                <span class="shape-icon" aria-hidden="true">◯</span>
+                <h3>Circle</h3>
+              </div>
+              <p class="formula">Area = π × radius²</p>
+              <div class="fields one-column">
+                <label class="field" for="circle radius">
+                  Radius
+                  <input
+                    type="number"
+                    placeholder="e.g. 4"
+                    id="circle radius"
+                  />
+                </label>
+              </div>
+              <button class="solve-button" type="button" onclick="circle()">
+                Calculate area <span aria-hidden="true">→</span>
+              </button>
+              <div class="result" id="displayCircle" aria-live="polite"></div>
+            </article>
 
+            <article class="calculator-card">
+              <div class="card-heading">
+                <span class="shape-icon" aria-hidden="true">◇</span>
+                <h3>Quadrilateral</h3>
+              </div>
+              <p class="formula">Area = diagonal × (h₁ + h₂) ÷ 2</p>
+              <div class="fields">
+                <label class="field" for="diagonal">
+                  Diagonal
+                  <input type="number" placeholder="e.g. 10" id="diagonal" />
+                </label>
+                <label class="field" for="h1">
+                  Height 1
+                  <input type="number" placeholder="e.g. 4" id="h1" />
+                </label>
+                <label class="field" for="h2">
+                  Height 2
+                  <input type="number" placeholder="e.g. 6" id="h2" />
+                </label>
+              </div>
+              <button
+                class="solve-button"
+                type="button"
+                onclick="quadilateral()"
+              >
+                Calculate area <span aria-hidden="true">→</span>
+              </button>
+              <div
+                class="result"
+                id="displayQuadilateral"
+                aria-live="polite"
+              ></div>
+            </article>
+
+            <article class="calculator-card">
+              <div class="card-heading">
+                <span class="shape-icon" aria-hidden="true">◇</span>
+                <h3>Rhombus</h3>
+              </div>
+              <p class="formula">Area = base × height</p>
+              <div class="fields">
+                <label class="field" for="rhombusBase">
+                  Base
+                  <input type="number" placeholder="e.g. 7" id="rhombusBase" />
+                </label>
+                <label class="field" for="rhombusHeight">
+                  Height
+                  <input
+                    type="number"
+                    placeholder="e.g. 4"
+                    id="rhombusHeight"
+                  />
+                </label>
+              </div>
+              <button class="solve-button" type="button" onclick="rhombus()">
+                Calculate area <span aria-hidden="true">→</span>
+              </button>
+              <div class="result" id="displayRhombus" aria-live="polite"></div>
+            </article>
+
+            <article class="calculator-card">
+              <div class="card-heading">
+                <span class="shape-icon" aria-hidden="true">⏢</span>
+                <h3>Trapezium</h3>
+              </div>
+              <p class="formula">Area = (a + b) × height ÷ 2</p>
+              <div class="fields">
+                <label class="field" for="firstLength">
+                  First parallel side
+                  <input type="number" placeholder="e.g. 8" id="firstLength" />
+                </label>
+                <label class="field" for="secondLength">
+                  Second parallel side
+                  <input type="number" placeholder="e.g. 5" id="secondLength" />
+                </label>
+                <label class="field" for="perpendicularHeight">
+                  Perpendicular height
+                  <input
+                    type="number"
+                    placeholder="e.g. 4"
+                    id="perpendicularHeight"
+                  />
+                </label>
+              </div>
+              <button class="solve-button" type="button" onclick="trapezium()">
+                Calculate area <span aria-hidden="true">→</span>
+              </button>
+              <div
+                class="result"
+                id="displayTrapezium"
+                aria-live="polite"
+              ></div>
+            </article>
+
+            <article class="calculator-card">
+              <div class="card-heading">
+                <span class="shape-icon" aria-hidden="true">▱</span>
+                <h3>Parallelogram</h3>
+              </div>
+              <p class="formula">Area = base × perpendicular height</p>
+              <div class="fields">
+                <label class="field" for="pBase">
+                  Base
+                  <input type="number" placeholder="e.g. 9" id="pBase" />
+                </label>
+                <label class="field" for="pHeight">
+                  Perpendicular height
+                  <input type="number" placeholder="e.g. 3" id="pHeight" />
+                </label>
+              </div>
+              <button
+                class="solve-button"
+                type="button"
+                onclick="parallelogram()"
+              >
+                Calculate area <span aria-hidden="true">→</span>
+              </button>
+              <div
+                class="result"
+                id="displayParallelogram"
+                aria-live="polite"
+              ></div>
+            </article>
+
+            <article class="calculator-card bmi-card">
+              <div>
+                <div class="card-heading">
+                  <span class="shape-icon" aria-hidden="true">↗</span>
+                  <h3>Body mass index</h3>
+                </div>
+                <p class="formula">A quick check using weight and height</p>
+              </div>
+              <div class="bmi-fields">
+                <label class="field" for="weight">
+                  Weight (kg)
+                  <input type="number" placeholder="e.g. 68" id="weight" />
+                </label>
+                <label class="field" for="height">
+                  Height (m)
+                  <input type="number" placeholder="e.g. 1.72" id="height" />
+                </label>
+                <button class="solve-button" type="button" onclick="bmi()">
+                  Calculate BMI <span aria-hidden="true">→</span>
+                </button>
+              </div>
+              <div class="result" id="displayBmi" aria-live="polite"></div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">Small steps. Clear answers.</footer>
+    </div>
     <script src="script.js"></script>
   </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- <script>
-    let b = 2;
-    let h = 7;
-    let s = 9;
-    let π = 3.14159;
-    let r = 24;
-    let d = 13;
-    let h1 = 7;
-    let h2 = 18;
-    let a = 4;
-    let weight= 48;
-    let height = 0.6; 
-
-    // area of a triangle
-    let areaOfTriangle = (1 / 2) * b * h;
-    console.log(`Area of triangle = ${areaOfTriangle}cm²`)
-
-    // area of a square
-    let areaOfSquare = s**2;
-    console.log(`Area of square = ${areaOfSquare}cm²`)
-
-    // area of a circle
-    let areaOfCircle = π * r ** 2;
-    console.log(`Area of circle = ${areaOfCircle}cm²`)
-
-    // area of a Quadrilateral
-    let areaOfQuadilateral = (1 / 2) * d * (h1 + h2);
-    console.log(`Area of quadilateral = ${areaOfQuadilateral}m² `)
-
-    // area of a Rhombus
-    let areaOfRhombus = b * h;
-    console.log(`Area of rhombus = ${areaOfRhombus}cm²`)
-
-    // area of a Trapezium
-    let areaOfTrapezium = (1 / 2) * (a + b) * h;
-    console.log(`Area of trapezium = ${areaOfTrapezium}cm²`)
-
-    // area of a Parallelogram
-    let areaOfParallelogram = b * h;
-    console.log(`Area of parallelogram = ${areaOfParallelogram}cm²`)
-
-    // the body mass index (BMI)
-    let BMI = weight / height
-    console.log(`BMI = ${BMI}kg/m²`) -->
-  </script>
 </html>
